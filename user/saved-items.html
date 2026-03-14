@@ -138,7 +138,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 
 <h5 class="mb-3">Your Saved Lift Planning Projects</h5>
 
-<table class="table table-hover align-middle">
+<table class="table table-hover align-middle" id="plansTable">
 
 <thead class="table-light">
 
@@ -162,8 +162,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td>Hyderabad</td>
 <td>12 Aug 2026</td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
@@ -174,8 +174,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td>Mumbai</td>
 <td>15 Aug 2026</td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
@@ -186,8 +186,116 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td>Chennai</td>
 <td>18 Aug 2026</td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP304</td>
+<td>Metro Rail Material Lift</td>
+<td>Tower Crane</td>
+<td>Bangalore</td>
+<td>21 Aug 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP305</td>
+<td>Airport Cargo Equipment Lift</td>
+<td>Mobile Crane</td>
+<td>Delhi</td>
+<td>24 Aug 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP306</td>
+<td>Oil Refinery Tank Installation</td>
+<td>Crawler Crane</td>
+<td>Visakhapatnam</td>
+<td>27 Aug 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP307</td>
+<td>Wind Turbine Component Lift</td>
+<td>Crawler Crane</td>
+<td>Pune</td>
+<td>30 Aug 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP308</td>
+<td>High Rise Building Steel Lift</td>
+<td>Tower Crane</td>
+<td>Hyderabad</td>
+<td>2 Sep 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP309</td>
+<td>Factory Generator Installation</td>
+<td>Mobile Crane</td>
+<td>Nagpur</td>
+<td>5 Sep 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP310</td>
+<td>Shipyard Equipment Lift</td>
+<td>Crawler Crane</td>
+<td>Kochi</td>
+<td>8 Sep 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP311</td>
+<td>Steel Plant Machinery Lift</td>
+<td>Mobile Crane</td>
+<td>Jamshedpur</td>
+<td>10 Sep 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>LP312</td>
+<td>Construction Material Hoisting</td>
+<td>Tower Crane</td>
+<td>Ahmedabad</td>
+<td>12 Sep 2026</td>
+<td>
+<button class="btn btn-sm btn-primary viewBtn"><i class="bi bi-eye"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
@@ -199,6 +307,56 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 
 </div>
 
+<script>
+
+/* DELETE PLAN */
+
+document.querySelectorAll(".deleteBtn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+if(confirm("Are you sure you want to delete this lift plan?")){
+
+let row = this.closest("tr");
+row.remove();
+
+}
+
+});
+
+});
+
+
+/* VIEW PLAN */
+
+document.querySelectorAll(".viewBtn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+let row = this.closest("tr");
+
+let id = row.children[0].innerText;
+let project = row.children[1].innerText;
+let crane = row.children[2].innerText;
+let location = row.children[3].innerText;
+let date = row.children[4].innerText;
+
+alert(
+"Lift Plan Details\n\n" +
+"ID: " + id + "\n" +
+"Project: " + project + "\n" +
+"Crane: " + crane + "\n" +
+"Location: " + location + "\n" +
+"Saved Date: " + date
+);
+
+});
+
+});
+
+</script>
+
 </body>
 
 </html>
+

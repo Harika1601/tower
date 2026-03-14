@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,8 +104,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 
 <div class="main">
 
-<!-- HEADER -->
-
 <div class="header d-flex justify-content-between align-items-center">
 
 <h4>User Management</h4>
@@ -115,13 +112,11 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 
 </div>
 
-<!-- USERS TABLE -->
-
 <div class="table-box">
 
 <h5 class="mb-3">Registered Users</h5>
 
-<table class="table table-hover align-middle">
+<table class="table table-hover align-middle" id="userTable">
 
 <thead class="table-light">
 
@@ -145,8 +140,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td><span class="badge bg-danger">Admin</span></td>
 <td><span class="badge bg-success">Active</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
@@ -157,8 +152,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td><span class="badge bg-secondary">User</span></td>
 <td><span class="badge bg-success">Active</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
@@ -169,34 +164,193 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 <td><span class="badge bg-secondary">User</span></td>
 <td><span class="badge bg-warning">Pending</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
+<tbody>
 
 <tr>
 <td>004</td>
-<td>Emma Johnson</td>
-<td>emma@email.com</td>
-<td><span class="badge bg-secondary">User</span></td>
+<td>John Carter</td>
+<td>john@email.com</td>
+<td><span class="badge bg-danger">Admin</span></td>
 <td><span class="badge bg-success">Active</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
 
 <tr>
 <td>005</td>
+<td>Sarah Williams</td>
+<td>sarah@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>006</td>
+<td>Michael Brown</td>
+<td>michael@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>007</td>
+<td>Emma Johnson</td>
+<td>emma@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>008</td>
 <td>David Miller</td>
 <td>david@email.com</td>
 <td><span class="badge bg-secondary">User</span></td>
 <td><span class="badge bg-danger">Blocked</span></td>
 <td>
-<button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
 </td>
 </tr>
+
+<tr>
+<td>009</td>
+<td>Olivia Taylor</td>
+<td>olivia@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>010</td>
+<td>James Anderson</td>
+<td>james@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>011</td>
+<td>Sophia Thomas</td>
+<td>sophia@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>012</td>
+<td>Daniel White</td>
+<td>daniel@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>013</td>
+<td>Ava Harris</td>
+<td>ava@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>014</td>
+<td>William Martin</td>
+<td>william@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>015</td>
+<td>Mia Thompson</td>
+<td>mia@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-danger">Blocked</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>016</td>
+<td>Lucas Garcia</td>
+<td>lucas@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>017</td>
+<td>Charlotte Martinez</td>
+<td>charlotte@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>018</td>
+<td>Ethan Robinson</td>
+<td>ethan@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+</tbody>
 
 </tbody>
 
@@ -206,7 +360,53 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 
 </div>
 
+<script>
+
+/* DELETE USER */
+
+document.querySelectorAll(".deleteBtn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+if(confirm("Are you sure you want to delete this user?")){
+
+let row = this.closest("tr");
+row.remove();
+
+}
+
+});
+
+});
+
+
+/* EDIT USER */
+
+document.querySelectorAll(".editBtn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+let row = this.closest("tr");
+
+let nameCell = row.children[1];
+let emailCell = row.children[2];
+
+let newName = prompt("Edit Name", nameCell.innerText);
+let newEmail = prompt("Edit Email", emailCell.innerText);
+
+if(newName !== null && newEmail !== null){
+
+nameCell.innerText = newName;
+emailCell.innerText = newEmail;
+
+}
+
+});
+
+});
+
+</script>
+
 </body>
 
 </html>
-
