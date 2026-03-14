@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Operator Certification Logs | Tower & Rigging</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+background-attachment:fixed;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100vh;
+width:240px;
+background:#0d6efd;
+color:white;
+position:fixed;
+padding:20px;
+}
+
+.sidebar h3{
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+.sidebar a:hover{
+background:white;
+color:#0d6efd;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:260px;
+padding:30px;
+}
+
+/* HEADER */
+
+.header{
+background:rgba(255,255,255,0.95);
+padding:15px 25px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+/* TABLE BOX */
+
+.table-box{
+background:rgba(255,255,255,0.96);
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>Admin Panel</h3>
+
+<a href="dashboard.html"><i class="bi bi-speedometer2"></i> Overview</a>
+<a href="users.html"><i class="bi bi-people"></i> User Management</a>
+<a href="bookings.html"><i class="bi bi-calendar-check"></i> Bookings</a>
+<a href="operators.html"><i class="bi bi-tools"></i> Operator Logs</a>
+<a href="messages.html"><i class="bi bi-chat-dots"></i> Messages</a>
+<a href="reports.html"><i class="bi bi-bar-chart"></i> Reports</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<!-- HEADER -->
+
+<div class="header d-flex justify-content-between align-items-center">
+
+<h4>Operator Certification Logs</h4>
+
+<input type="text" class="form-control w-25" placeholder="Search operators...">
+
+</div>
+
+<!-- OPERATOR TABLE -->
+
+<div class="table-box">
+
+<h5 class="mb-3">Certified Crane Operators</h5>
+
+<table class="table table-hover align-middle">
+
+<thead class="table-light">
+
+<tr>
+<th>ID</th>
+<th>Operator Name</th>
+<th>Certification</th>
+<th>License Level</th>
+<th>Expiry Year</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>OP001</td>
+<td>Michael Brown</td>
+<td>Tower Crane Certification</td>
+<td>Level 2</td>
+<td>2027</td>
+<td><span class="badge bg-success">Valid</span></td>
+</tr>
+
+<tr>
+<td>OP002</td>
+<td>David Wilson</td>
+<td>Mobile Crane License</td>
+<td>Level 3</td>
+<td>2026</td>
+<td><span class="badge bg-success">Valid</span></td>
+</tr>
+
+<tr>
+<td>OP003</td>
+<td>James Anderson</td>
+<td>Heavy Lift Certification</td>
+<td>Level 2</td>
+<td>2025</td>
+<td><span class="badge bg-warning">Expiring Soon</span></td>
+</tr>
+
+<tr>
+<td>OP004</td>
+<td>Robert Taylor</td>
+<td>Crawler Crane Operator</td>
+<td>Level 3</td>
+<td>2028</td>
+<td><span class="badge bg-success">Valid</span></td>
+</tr>
+
+<tr>
+<td>OP005</td>
+<td>Daniel Thomas</td>
+<td>Rigging Specialist</td>
+<td>Level 1</td>
+<td>2024</td>
+<td><span class="badge bg-danger">Expired</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+

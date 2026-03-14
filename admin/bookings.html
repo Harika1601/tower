@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Crane Bookings | Tower & Rigging</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+background-attachment:fixed;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100vh;
+width:240px;
+background:#0d6efd;
+color:white;
+position:fixed;
+padding:20px;
+}
+
+.sidebar h3{
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+.sidebar a:hover{
+background:white;
+color:#0d6efd;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:260px;
+padding:30px;
+}
+
+/* HEADER */
+
+.header{
+background:rgba(255,255,255,0.95);
+padding:15px 25px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+/* TABLE BOX */
+
+.table-box{
+background:rgba(255,255,255,0.96);
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>Admin Panel</h3>
+
+<a href="dashboard.html"><i class="bi bi-speedometer2"></i> Overview</a>
+<a href="users.html"><i class="bi bi-people"></i> User Management</a>
+<a href="bookings.html"><i class="bi bi-calendar-check"></i> Bookings</a>
+<a href="operators.html"><i class="bi bi-tools"></i> Operator Logs</a>
+<a href="messages.html"><i class="bi bi-chat-dots"></i> Messages</a>
+<a href="reports.html"><i class="bi bi-bar-chart"></i> Reports</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<!-- HEADER -->
+
+<div class="header d-flex justify-content-between align-items-center">
+
+<h4>Crane Bookings</h4>
+
+<input type="text" class="form-control w-25" placeholder="Search bookings...">
+
+</div>
+
+<!-- BOOKINGS TABLE -->
+
+<div class="table-box">
+
+<h5 class="mb-3">Active Project Bookings</h5>
+
+<table class="table table-hover align-middle">
+
+<thead class="table-light">
+
+<tr>
+<th>ID</th>
+<th>Project</th>
+<th>Crane Type</th>
+<th>Client</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>BK001</td>
+<td>Bridge Construction</td>
+<td>Tower Crane</td>
+<td>ABC Infrastructure</td>
+<td>10 Aug 2026</td>
+<td><span class="badge bg-success">Completed</span></td>
+</tr>
+
+<tr>
+<td>BK002</td>
+<td>High Rise Building</td>
+<td>Mobile Crane</td>
+<td>Skyline Builders</td>
+<td>14 Aug 2026</td>
+<td><span class="badge bg-warning">In Progress</span></td>
+</tr>
+
+<tr>
+<td>BK003</td>
+<td>Industrial Plant Installation</td>
+<td>Crawler Crane</td>
+<td>Steel Corp Ltd</td>
+<td>20 Aug 2026</td>
+<td><span class="badge bg-primary">Scheduled</span></td>
+</tr>
+
+<tr>
+<td>BK004</td>
+<td>Wind Turbine Setup</td>
+<td>Heavy Lift Crane</td>
+<td>Green Energy Pvt Ltd</td>
+<td>25 Aug 2026</td>
+<td><span class="badge bg-info">Upcoming</span></td>
+</tr>
+
+<tr>
+<td>BK005</td>
+<td>Port Container Terminal</td>
+<td>Harbor Crane</td>
+<td>Global Shipping Ltd</td>
+<td>30 Aug 2026</td>
+<td><span class="badge bg-danger">Delayed</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+

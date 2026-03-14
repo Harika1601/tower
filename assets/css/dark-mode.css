@@ -1,0 +1,12 @@
+body.dark{
+background:#111;
+color:white;
+}
+
+.dark .navbar{
+background:black;
+}
+
+.dark .card{
+background:#1e1e1e;
+}

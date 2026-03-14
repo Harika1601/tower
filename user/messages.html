@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>User Messages | Tower & Rigging</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+background-attachment:fixed;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100vh;
+width:240px;
+background:#0d6efd;
+color:white;
+position:fixed;
+padding:20px;
+}
+
+.sidebar h3{
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+.sidebar a:hover{
+background:white;
+color:#0d6efd;
+}
+
+/* MAIN */
+
+.main{
+margin-left:260px;
+padding:30px;
+}
+
+/* HEADER */
+
+.header{
+background:rgba(255,255,255,0.95);
+padding:15px 25px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+/* TABLE */
+
+.table-box{
+background:rgba(255,255,255,0.96);
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>User Panel</h3>
+
+<a href="dashboard.html">
+<i class="bi bi-speedometer2"></i> Dashboard
+</a>
+
+<a href="orders.html">
+<i class="bi bi-calendar-check"></i> My Bookings
+</a>
+
+<a href="saved-items.html">
+<i class="bi bi-bookmark"></i> Saved Items
+</a>
+
+<a href="messages.html">
+<i class="bi bi-chat-dots"></i> Messages
+</a>
+
+<a href="profile.html">
+<i class="bi bi-person"></i> Profile
+</a>
+
+<a href="settings.html">
+<i class="bi bi-gear"></i> Settings
+</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<!-- HEADER -->
+
+<div class="header d-flex justify-content-between align-items-center">
+
+<h4>Support Messages</h4>
+
+<input type="text" class="form-control w-25" placeholder="Search messages...">
+
+</div>
+
+<!-- MESSAGES TABLE -->
+
+<div class="table-box">
+
+<h5 class="mb-3">Your Support Requests</h5>
+
+<table class="table table-hover align-middle">
+
+<thead class="table-light">
+
+<tr>
+<th>ID</th>
+<th>Subject</th>
+<th>Message</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>MSG101</td>
+<td>Crane Booking Inquiry</td>
+<td>Need assistance with crane booking for bridge project.</td>
+<td>10 Aug 2026</td>
+<td><span class="badge bg-danger">New</span></td>
+</tr>
+
+<tr>
+<td>MSG102</td>
+<td>Lift Planning Support</td>
+<td>Requesting help with lift calculation and safety analysis.</td>
+<td>12 Aug 2026</td>
+<td><span class="badge bg-success">Replied</span></td>
+</tr>
+
+<tr>
+<td>MSG103</td>
+<td>Equipment Availability</td>
+<td>Is a 200-ton mobile crane available next week?</td>
+<td>14 Aug 2026</td>
+<td><span class="badge bg-warning">Pending</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+

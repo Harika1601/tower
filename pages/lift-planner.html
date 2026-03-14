@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lift Planning Simulator | Tower & Rigging</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:#f8f9fa;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:absolute;
+top:0;
+width:100%;
+background:transparent;
+padding:20px 0;
+z-index:1000;
+}
+
+.logo{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+margin-right:10px;
+}
+
+/* NAV BUTTONS */
+
+.navbar-nav .nav-link{
+color:white !important;
+font-weight:600;
+margin-left:10px;
+padding:8px 18px;
+border-radius:20px;
+background:#0d6efd;
+transition:0.3s;
+}
+
+.navbar-nav .nav-link:hover{
+background:white;
+color:#0d6efd !important;
+}
+
+/* HERO */
+
+.hero{
+height:40vh;
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 0;
+}
+
+/* ROW FLEX FOR SAME HEIGHT */
+
+.row-equal{
+display:flex;
+flex-wrap:wrap;
+}
+
+/* LEFT CARD */
+
+.simulator-card{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+height:100%;
+}
+
+/* RIGHT CARD BLUE */
+
+.info-box{
+background:#0d6efd;
+color:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+height:100%;
+}
+
+/* TABLE TEXT */
+
+.info-box table{
+color:white;
+}
+
+/* INPUTS */
+
+input, select{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* BUTTON */
+
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:12px;
+border-radius:6px;
+width:100%;
+}
+
+/* RESULT */
+
+.result-box{
+margin-top:20px;
+padding:20px;
+border-radius:10px;
+background:#e9f2ff;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+
+<img src="../assets/images/logo.jpg" class="logo">
+<span class="fw-bold">Tower&Rigging</span>
+
+</a>
+
+<div class="navbar-nav ms-auto">
+
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="services.html">Services</a>
+<a class="nav-link" href="pricing.html">Pricing</a>
+<a class="nav-link" href="blog.html">Blog</a>
+<a class="nav-link" href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1 class="display-5 fw-bold">Lift Planning Simulator</h1>
+<p class="lead">Calculate crane lifting capacity and analyze lift safety.</p>
+
+</div>
+
+</section>
+
+<!-- SIMULATOR -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="row row-equal g-5">
+
+<!-- LEFT CARD -->
+
+<div class="col-md-6 d-flex">
+
+<div class="simulator-card w-100">
+
+<h3 class="mb-4">Lift Calculation</h3>
+
+<form>
+
+<label>Load Weight (tons)</label>
+<input type="number" placeholder="Enter load weight">
+
+<label>Lifting Radius (meters)</label>
+<input type="number" placeholder="Distance from crane">
+
+<label>Boom Length (meters)</label>
+<input type="number" placeholder="Crane boom length">
+
+<label>Crane Type</label>
+
+<select>
+
+<option>Tower Crane</option>
+<option>Mobile Crane</option>
+<option>Crawler Crane</option>
+
+</select>
+
+<label>Wind Speed (km/h)</label>
+<input type="number" placeholder="Environmental wind speed">
+
+<button type="submit">Calculate Lift</button>
+
+</form>
+
+<div class="result-box">
+
+<strong>Estimated Lift Status</strong>
+
+<p>
+The simulator evaluates crane load limits based on
+weight, radius, and boom length.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT CARD -->
+
+<div class="col-md-6 d-flex">
+
+<div class="info-box w-100">
+
+<h4>Lift Calculation Guidelines</h4>
+
+<p>
+Lift calculations help engineers determine whether a crane
+can safely lift a specific load at a given radius.
+</p>
+
+<h5>Important Calculation Factors</h5>
+
+<ul>
+
+<li>Load weight and dimensions</li>
+<li>Lifting radius from crane center</li>
+<li>Boom length and angle</li>
+<li>Crane load chart capacity</li>
+<li>Environmental conditions</li>
+
+</ul>
+
+<h5>Typical Crane Capacity Example</h5>
+
+<table class="table table-bordered table-light">
+
+<tr>
+<th>Radius</th>
+<th>Max Load</th>
+</tr>
+
+<tr>
+<td>5 m</td>
+<td>10 tons</td>
+</tr>
+
+<tr>
+<td>10 m</td>
+<td>7 tons</td>
+</tr>
+
+<tr>
+<td>15 m</td>
+<td>4 tons</td>
+</tr>
+
+</table>
+
+<h5>Safety Recommendations</h5>
+
+<ul>
+
+<li>Never exceed crane load chart capacity</li>
+<li>Ensure stable ground conditions</li>
+<li>Monitor wind speed</li>
+<li>Use certified rigging equipment</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container text-center">
+
+<p>© 2026 Tower & Rigging Services</p>
+<p>Industrial Lifting • Crane Rental • Rigging Solutions</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
+
