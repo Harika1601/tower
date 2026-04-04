@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Login | Tower & Rigging</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* BACKGROUND */
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Segoe UI',sans-serif;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+}
+
+/* GLASS CARD */
+
+.login-card{
+width:360px;
+padding:35px;
+border-radius:15px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+color:white;
+text-align:center;
+}
+
+/* TITLE */
+
+.login-card h2{
+margin-bottom:25px;
+font-weight:600;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group-text{
+background:#0d6efd;
+color:white;
+border:none;
+}
+
+.form-control{
+border-radius:0 6px 6px 0;
+}
+
+/* BUTTON */
+
+.login-btn{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#0d6efd;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+.login-btn:hover{
+background:#084298;
+transform:scale(1.03);
+}
+
+/* LINKS */
+
+.links{
+margin-top:15px;
+font-size:14px;
+}
+
+.links a{
+color:#fff;
+text-decoration:underline;
+}
+
+.links a:hover{
+color:#0d6efd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<h2>User Login</h2>
+
+<form onsubmit="userLogin(event)">
+
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-envelope"></i></span>
+<input type="email" id="email" class="form-control" placeholder="Email" required>
+</div>
+
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-lock"></i></span>
+<input type="password" id="password" class="form-control" placeholder="Password" required>
+</div>
+
+<button type="submit" class="login-btn">Login</button>
+
+</form>
+
+<div class="links">
+<p>Admin? <a href="admin-login.html">Login here</a></p>
+<a href="/pages/index.html">← Back to Website</a>
+</div>
+
+</div>
+
+<script>
+
+function userLogin(e){
+e.preventDefault();
+
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+if(email==="user@gmail.com" && password==="user123"){
+sessionStorage.setItem("role","user");
+window.location.href="../user/dashboard.html";
+}else{
+alert("Invalid User Login");
+}
+}
+
+</script>
+
+</body>
+</html>

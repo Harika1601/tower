@@ -13,7 +13,6 @@
 
 <style>
 
-/* GENERAL */
 body{
 font-family:'Segoe UI',sans-serif;
 margin:0;
@@ -31,10 +30,6 @@ background:#0d6efd;
 color:white;
 position:fixed;
 padding:20px;
-}
-
-.sidebar h3{
-margin-bottom:30px;
 }
 
 .sidebar a{
@@ -57,24 +52,20 @@ margin-left:260px;
 padding:30px;
 }
 
-/* HEADER */
 .header{
 background:rgba(255,255,255,0.95);
 padding:15px 25px;
 border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
 margin-bottom:30px;
 }
 
-/* TABLE */
 .table-box{
 background:rgba(255,255,255,0.96);
 padding:25px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* MODAL */
+/* DELETE MODAL */
 .custom-modal{
 position:fixed;
 top:0;
@@ -93,13 +84,6 @@ background:#fff;
 padding:25px;
 border-radius:12px;
 width:380px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-animation:fadeIn 0.25s ease;
-}
-
-@keyframes fadeIn{
-from{transform:scale(0.9);opacity:0;}
-to{transform:scale(1);opacity:1;}
 }
 
 </style>
@@ -110,7 +94,6 @@ to{transform:scale(1);opacity:1;}
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-
 <h3>Admin Panel</h3>
 
 <a href="dashboard.html"><i class="bi bi-speedometer2"></i> Overview</a>
@@ -119,24 +102,23 @@ to{transform:scale(1);opacity:1;}
 <a href="operators.html"><i class="bi bi-tools"></i> Operator Logs</a>
 <a href="messages.html"><i class="bi bi-chat-dots"></i> Messages</a>
 <a href="reports.html"><i class="bi bi-bar-chart"></i> Reports</a>
-
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-<div class="header d-flex justify-content-between align-items-center">
+<div class="header d-flex justify-content-between">
 <h4>User Management</h4>
 <input type="text" class="form-control w-25" placeholder="Search users...">
 </div>
 
 <div class="table-box">
 
-<h5 class="mb-3">Registered Users</h5>
+<h5>Registered Users</h5>
 
-<table class="table table-hover align-middle">
+<table class="table table-hover">
 
-<thead class="table-light">
+<thead>
 <tr>
 <th>ID</th>
 <th>Name</th>
@@ -151,6 +133,67 @@ to{transform:scale(1);opacity:1;}
 
 <tr>
 <td>001</td>
+<td>Jhansi</td>
+<td>jhansi@email.com</td>
+<td><span class="badge bg-danger">Admin</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-danger btn-sm deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>002</td>
+<td>Sara Williams</td>
+<td>sara@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-primary btn-sm editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-danger btn-sm deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+<tbody>
+
+<tr>
+<td>003</td>
+<td>Jhansi</td>
+<td>jhansi@email.com</td>
+<td><span class="badge bg-danger">Admin</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>004</td>
+<td>Sara Williams</td>
+<td>sara@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>005</td>
+<td>Michael</td>
+<td>michael@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>006</td>
 <td>John Carter</td>
 <td>john@email.com</td>
 <td><span class="badge bg-danger">Admin</span></td>
@@ -162,7 +205,7 @@ to{transform:scale(1);opacity:1;}
 </tr>
 
 <tr>
-<td>002</td>
+<td>007</td>
 <td>Sarah Williams</td>
 <td>sarah@email.com</td>
 <td><span class="badge bg-secondary">User</span></td>
@@ -174,7 +217,7 @@ to{transform:scale(1);opacity:1;}
 </tr>
 
 <tr>
-<td>003</td>
+<td>008</td>
 <td>Michael Brown</td>
 <td>michael@email.com</td>
 <td><span class="badge bg-secondary">User</span></td>
@@ -185,29 +228,164 @@ to{transform:scale(1);opacity:1;}
 </td>
 </tr>
 
+<tr>
+<td>009</td>
+<td>Emma Johnson</td>
+<td>emma@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>010</td>
+<td>David Wilson</td>
+<td>david@email.com</td>
+<td><span class="badge bg-danger">Admin</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>011</td>
+<td>Olivia Martinez</td>
+<td>olivia@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>012</td>
+<td>James Anderson</td>
+<td>james@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>013</td>
+<td>Sophia Taylor</td>
+<td>sophia@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-danger">Inactive</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>014</td>
+<td>Daniel Thomas</td>
+<td>daniel@email.com</td>
+<td><span class="badge bg-danger">Admin</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>015</td>
+<td>Isabella Moore</td>
+<td>isabella@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>016</td>
+<td>William Jackson</td>
+<td>william@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-warning">Pending</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+<tr>
+<td>017</td>
+<td>Shilpa</td>
+<td>shilpa@email.com</td>
+<td><span class="badge bg-secondary">User</span></td>
+<td><span class="badge bg-success">Active</span></td>
+<td>
+<button class="btn btn-sm btn-primary editBtn"><i class="bi bi-pencil"></i></button>
+<button class="btn btn-sm btn-danger deleteBtn"><i class="bi bi-trash"></i></button>
+</td>
+</tr>
+
+</tbody>
+
 </tbody>
 
 </table>
 
 </div>
-
 </div>
 
-<!-- MODAL -->
+<!-- DELETE MODAL -->
 <div id="customModal" class="custom-modal">
 <div class="modal-box">
 <h5>Delete Confirmation</h5>
 <p id="modalMessage"></p>
-<div class="text-end mt-3">
+<div class="text-end">
 <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
 <button class="btn btn-danger" id="confirmBtn">Delete</button>
 </div>
 </div>
 </div>
 
+<!-- EDIT MODAL -->
+<div class="modal fade" id="editUserModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5>Edit User</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<input type="text" id="editName" class="form-control mb-2">
+<input type="email" id="editEmail" class="form-control">
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="saveEditBtn">Save</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
 
-/* MODAL */
+/* DELETE */
 function openModal(message, callback){
 document.getElementById("modalMessage").innerText = message;
 document.getElementById("customModal").style.display = "flex";
@@ -222,37 +400,43 @@ function closeModal(){
 document.getElementById("customModal").style.display = "none";
 }
 
-/* DELETE */
-document.querySelectorAll(".deleteBtn").forEach(button=>{
-button.addEventListener("click", function(){
-
+document.querySelectorAll(".deleteBtn").forEach(btn=>{
+btn.addEventListener("click", function(){
 let row = this.closest("tr");
-
 openModal("Are you sure you want to delete this user?", function(){
 row.remove();
 });
-
 });
 });
 
 /* EDIT */
-document.querySelectorAll(".editBtn").forEach(button=>{
-button.addEventListener("click", function(){
+let selectedRow = null;
 
-let row = this.closest("tr");
+document.querySelectorAll(".editBtn").forEach(btn=>{
+btn.addEventListener("click", function(){
 
-let nameCell = row.children[1];
-let emailCell = row.children[2];
+selectedRow = this.closest("tr");
 
-let newName = prompt("Edit Name", nameCell.innerText);
-let newEmail = prompt("Edit Email", emailCell.innerText);
+document.getElementById("editName").value = selectedRow.children[1].innerText;
+document.getElementById("editEmail").value = selectedRow.children[2].innerText;
 
-if(newName !== null && newEmail !== null){
-nameCell.innerText = newName;
-emailCell.innerText = newEmail;
-}
+new bootstrap.Modal(document.getElementById("editUserModal")).show();
 
 });
+});
+
+document.getElementById("saveEditBtn").addEventListener("click", function(){
+
+let name = document.getElementById("editName").value;
+let email = document.getElementById("editEmail").value;
+
+if(name && email){
+selectedRow.children[1].innerText = name;
+selectedRow.children[2].innerText = email;
+}
+
+bootstrap.Modal.getInstance(document.getElementById("editUserModal")).hide();
+
 });
 
 </script>

@@ -1,69 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Our Services | Tower & Rigging</title>
+<title>RigLift | Services</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
 
 /* GENERAL */
-
 body{
 font-family:'Segoe UI',sans-serif;
 margin:0;
-background:#f8f9fa;
-}
-
-/* NAVBAR */
-
-.navbar{
-position:absolute;
-top:0;
-width:100%;
-background:transparent;
-padding:20px 0;
-z-index:1000;
-}
-
-.logo{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-margin-right:10px;
-}
-
-/* NAV BUTTONS */
-
-.navbar-nav .nav-link{
-color:white !important;
-font-weight:600;
-margin-left:10px;
-padding:8px 18px;
-border-radius:20px;
-background:#0d6efd;
 transition:0.3s;
 }
 
-.navbar-nav .nav-link:hover{
-background:white;
-color:#0d6efd !important;
+/* DARK MODE */
+body.dark-mode{background:#121212;color:#fff;}
+body.dark-mode .custom-navbar{background:#1e1e1e;}
+body.dark-mode .nav-link{color:#fff !important;}
+body.dark-mode .card{background:#1e1e1e;color:#fff;}
+body.dark-mode .footer{background:#000;}
+
+/* RTL */
+body.rtl{direction: rtl;}
+body.rtl .nav-wrapper{flex-direction: row-reverse;}
+body.rtl .nav-right{justify-content:flex-start;}
+
+/* HEADER */
+.custom-navbar{
+background:#fff;
+height:70px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* HERO */
+.nav-wrapper{
+display:flex;
+justify-content:space-between;
+}
 
+.nav-left{width:220px;}
+.nav-center{flex:1;display:flex;justify-content:center;}
+.nav-right{width:260px;display:flex;justify-content:flex-end;gap:10px;}
+
+.logo{width:42px;height:42px;border-radius:50%;}
+
+.navbar-nav .nav-link{
+line-height:70px;
+margin:0 8px;
+color:#333 !important;
+font-weight:500;
+}
+
+/* HERO NEW STYLE */
 .hero{
-height:50vh;
+height: 50vh;
+margin-top:70px;
+
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
 url("../assets/images/bg.jpg") center/cover no-repeat;
+
 display:flex;
 align-items:center;
 justify-content:center;
@@ -71,59 +72,71 @@ text-align:center;
 color:white;
 }
 
-/* SECTION */
-
-.section{
-padding:80px 0;
+.hero h1{
+font-size:50px;
+font-weight:700;
 }
 
-/* SERVICE CARD */
+/* SERVICES GRID */
+.section{padding:80px 0;}
 
 .service-card{
 border:none;
-border-radius:15px;
-background:white;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
 transition:0.3s;
-padding:20px;
 }
 
 .service-card:hover{
 transform:translateY(-10px);
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
 
 .service-img{
-width:100%;
-height:230px;
+height:200px;
 object-fit:cover;
-border-radius:12px;
-margin-bottom:15px;
+width:100%;
 }
 
-/* ADDITIONAL SERVICES */
+.service-content{
+padding:20px;
+}
 
-.additional-services{
+/* PROCESS */
+.process-step{
+text-align:center;
+}
+
+.process-step i{
+font-size:40px;
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
 background:#0d6efd;
 color:white;
-}
-
-.extra-box{
-padding:25px;
-background:white;
-color:#333;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-margin-bottom:20px;
+text-align:center;
+padding:70px 0;
 }
 
 /* FOOTER */
-
-footer{
-background:#111;
-color:white;
-padding:30px;
+.footer{
+background:#0b0f19;
+color:#fff;
+padding:70px 0 20px;
 }
+
+.footer-title{font-size:22px;font-weight:600;margin-bottom:15px;}
+.footer-subtitle{margin-bottom:15px;}
+.footer-text{color:#bbb;}
+
+.footer-links{list-style:none;padding:0;}
+.footer-links li{margin-bottom:8px;}
+.footer-links a{color:#bbb;text-decoration:none;}
+
+.footer-line{border-color:#333;margin:30px 0;}
 
 </style>
 
@@ -131,263 +144,219 @@ padding:30px;
 
 <body>
 
-<!-- NAVBAR -->
+<!-- SAME HEADER -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+<div class="container nav-wrapper">
 
-<nav class="navbar navbar-expand-lg">
-
-<div class="container">
-
-<a class="navbar-brand d-flex align-items-center text-white" href="index.html">
-
-<img src="../assets/images/logo.jpg" class="logo">
-
+<div class="nav-left d-flex align-items-center">
+<img src="../assets/images/logo.jpg" class="logo me-2">
 <span class="fw-bold">Tower&Rigging</span>
+</div>
 
-</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-<div class="navbar-nav ms-auto">
+<div class="collapse navbar-collapse" id="menu">
 
-<a class="nav-link" href="index.html">Home</a>
-<a class="nav-link" href="services.html">Services</a>
-<a class="nav-link" href="pricing.html">Pricing</a>
-<a class="nav-link" href="blog.html">Blog</a>
-<a class="nav-link" href="contact.html">Contact</a>
+<div class="nav-center">
+<ul class="navbar-nav">
 
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home1</a></li>
+<li><a class="dropdown-item" href="home2.html">Home2</a></li>
+</ul>
+</li>
+
+<li><a class="nav-link active" href="#">Services</a></li>
+<li><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li><a class="nav-link" href="blog.html">Blog</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+<li><a class="nav-link" href="lift-planner.html">Lift Planner</a></li>
+<li><a class="nav-link" href="about.html">About</a></li>
+
+
+
+</ul>
+</div>
+
+<div class="nav-right">
+<button class="btn btn-outline-secondary btn-sm" onclick="toggleRTL()">RTL</button>
+<button id="themeBtn" class="btn btn-outline-dark btn-sm" onclick="toggleDarkMode()">🌙</button>
+<a href="#" class="btn btn-primary btn-sm">Sign Up</a>
+<a href="#" class="btn btn-outline-primary btn-sm">Log In</a>
 </div>
 
 </div>
-
+</div>
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="container">
-
-<h1 class="display-4 fw-bold">Our Core Services</h1>
-
-<p class="lead mt-3">
-Comprehensive crane and rigging solutions for construction,
-infrastructure, and industrial operations across multiple industries.
-</p>
-
+<h1>Our Professional Services</h1>
+<p class="lead mt-3">End-to-end crane and rigging solutions tailored for your projects.</p>
 </div>
-
 </section>
 
-<!-- SERVICES -->
-
+<!-- SERVICES GRID -->
 <section class="section">
-
 <div class="container">
 
-<h2 class="text-center mb-5">Professional Crane Services</h2>
+<div class="row g-4">
 
-<div class="row g-5">
-
-<div class="col-md-6 col-lg-3">
-
+<div class="col-md-4">
 <div class="service-card">
-
 <img src="../assets/images/service1.jpg" class="service-img">
-
-<h4>Tower Crane Rental</h4>
-
-<p>
-Our tower crane rental services support large-scale construction
-projects such as skyscrapers, bridges, and industrial plants.
-We provide high-capacity cranes designed for stability,
-precision, and safety.
-</p>
-
+<div class="service-content">
+<h5>Tower Crane Rental</h5>
+<p>High-performance cranes for all construction scales.</p>
+</div>
+</div>
 </div>
 
-</div>
-
-<div class="col-md-6 col-lg-3">
-
+<div class="col-md-4">
 <div class="service-card">
-
 <img src="../assets/images/service2.jpg" class="service-img">
-
-<h4>Heavy Rigging</h4>
-
-<p>
-Our rigging experts specialize in lifting and moving
-heavy equipment, steel structures, and industrial
-machinery with advanced lifting techniques.
-</p>
-
+<div class="service-content">
+<h5>Heavy Rigging</h5>
+<p>Safe handling of heavy industrial equipment.</p>
+</div>
+</div>
 </div>
 
-</div>
-
-<div class="col-md-6 col-lg-3">
-
+<div class="col-md-4">
 <div class="service-card">
-
 <img src="../assets/images/service3.jpg" class="service-img">
-
-<h4>Lift Engineering</h4>
-
-<p>
-We provide professional lift planning including
-load calculations, site condition analysis,
-risk assessment, and crane positioning strategies.
-</p>
-
+<div class="service-content">
+<h5>Lift Planning</h5>
+<p>Accurate and safe lift execution strategies.</p>
 </div>
-
 </div>
-
-<div class="col-md-6 col-lg-3">
-
-<div class="service-card">
-
-<img src="../assets/images/service4.jpg" class="service-img">
-
-<h4>Safety Consulting</h4>
-
-<p>
-Our safety experts ensure that all lifting operations
-meet international safety standards and regulations,
-reducing risks in complex construction environments.
-</p>
-
 </div>
 
 </div>
 
 </div>
-
-</div>
-
 </section>
 
-<!-- ADDITIONAL SERVICES -->
-
-<section class="section additional-services">
-
+<!-- PROCESS -->
+<section class="section bg-light">
 <div class="container">
 
-<h2 class="text-center mb-5">Additional Services</h2>
+<h2 class="text-center mb-5">How We Work</h2>
 
 <div class="row">
 
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Equipment Installation</h5>
-
-<p>
-Professional installation of large industrial equipment,
-generators, turbines, and construction components using
-precision lifting techniques.
-</p>
-
+<div class="col-md-4 process-step">
+<i class="bi bi-search"></i>
+<h5>Analyze</h5>
 </div>
 
+<div class="col-md-4 process-step">
+<i class="bi bi-diagram-3"></i>
+<h5>Plan</h5>
 </div>
 
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Project Planning</h5>
-
-<p>
-We help construction companies plan complex lifting
-operations including equipment selection,
-lift scheduling, and risk mitigation.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Emergency Lifting</h5>
-
-<p>
-24/7 emergency crane services for urgent industrial
-situations such as equipment relocation or structural repairs.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Infrastructure Lifting</h5>
-
-<p>
-Support for infrastructure projects including bridge
-construction, metro rail systems, and highway development.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Industrial Maintenance Lifts</h5>
-
-<p>
-Specialized crane operations for maintenance of
-industrial plants, refineries, and power stations.
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="extra-box">
-
-<h5>Heavy Machinery Relocation</h5>
-
-<p>
-Safe dismantling, transport, and reinstallation of
-large industrial machinery and manufacturing equipment.
-</p>
-
+<div class="col-md-4 process-step">
+<i class="bi bi-gear"></i>
+<h5>Execute</h5>
 </div>
 
 </div>
 
 </div>
-
-</div>
-
 </section>
 
-<!-- FOOTER -->
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<h2>Ready to Start Your Project?</h2>
+<a href="#" class="btn btn-light mt-3">Get a Quote</a>
+</div>
+</section>
 
-<footer>
+<!-- SAME FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="row gy-4">
 
-<div class="container text-center">
+<div class="col-md-4">
+<h4 class="footer-title">Tower & Rigging</h4>
+<p class="footer-text">
+We provide safe, efficient, and reliable crane & rigging services.
+</p>
+</div>
 
-<p>© 2026 Tower & Rigging Services</p>
+<div class="col-md-3">
+<h5 class="footer-subtitle">Quick Links</h5>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="home2.html">Home 2</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="lift-planner.html">Lift Planner</a></li>
+<li><a href="coming-soon.html">Coming Soon</a></li>
+<li><a href="404.html">404 Page</a></li>
 
-<p>Industrial Lifting • Crane Rental • Rigging Solutions</p>
+</ul>
+</div>
+
+<div class="col-md-3">
+<h5 class="footer-subtitle">Services</h5>
+<ul class="footer-links">
+<li><a href="#">Crane Rental</a></li>
+<li><a href="#">Rigging</a></li>
+<li><a href="#">Planning</a></li>
+</ul>
+</div>
+
+<div class="col-md-2">
+<input type="email" class="form-control mb-2" placeholder="Email">
+<button class="btn btn-primary w-100">Subscribe</button>
+</div>
 
 </div>
 
+<hr class="footer-line">
+
+<div class="text-center">
+<p class="small">© 2026 Tower & Rigging</p>
+</div>
+
+</div>
 </footer>
 
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+function toggleDarkMode(){
+document.body.classList.toggle("dark-mode");
+let btn=document.getElementById("themeBtn");
+
+if(document.body.classList.contains("dark-mode")){
+btn.innerHTML="☀️";
+localStorage.setItem("theme","dark");
+}else{
+btn.innerHTML="🌙";
+localStorage.setItem("theme","light");
+}
+}
+
+window.onload=function(){
+let saved=localStorage.getItem("theme");
+if(saved==="dark"){
+document.body.classList.add("dark-mode");
+document.getElementById("themeBtn").innerHTML="☀️";
+}
+}
+
+function toggleRTL(){
+document.body.classList.toggle("rtl");
+}
+</script>
+
+</body>
 </html>
-```

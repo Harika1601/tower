@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,157 +13,186 @@
 <style>
 
 /* GENERAL */
-
 body{
 font-family:'Segoe UI',sans-serif;
 margin:0;
-transition:0.4s;
-}
-
-/* NAVBAR */
-
-.navbar{
-position:absolute;
-top:0;
-width:100%;
-background:transparent;
-padding:20px 0;
-z-index:1000;
-}
-
-/* LOGO */
-
-.logo{
-width:50px;
-height:50px;
-border-radius:50%;
-object-fit:cover;
-margin-right:10px;
-}
-
-/* NAV BUTTONS */
-
-.navbar-nav .nav-link{
-color:white !important;
-font-weight:600;
-margin-left:12px;
-padding:8px 20px;
-border-radius:25px;
-background:rgba(13,110,253,0.85);
 transition:0.3s;
-}
-
-.navbar-nav .nav-link:hover{
-background:white;
-color:#0d6efd !important;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("../assets/images/bg.jpg") center/cover no-repeat;
-display:flex;
-align-items:center;
-text-align:center;
-color:white;
-}
-
-/* HERO BADGES */
-
-.hero-features span{
-margin:10px;
-padding:10px 18px;
-background:rgba(255,255,255,0.15);
-border-radius:25px;
-display:inline-block;
-font-size:14px;
-}
-
-/* SERVICES */
-
-.service-card{
-border:none;
-border-radius:12px;
-transition:0.3s;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-}
-
-/* STATS */
-
-.stats{
-background:#0d6efd;
-color:white;
-padding:60px 0;
-}
-
-/* CTA */
-
-.cta{
-background:#111;
-color:white;
-padding:70px 0;
-text-align:center;
-}
-
-/* FOOTER */
-
-footer{
-background:#000;
-color:white;
-padding:30px;
 }
 
 /* DARK MODE */
-
-.dark-mode{
+body.dark-mode{
 background:#121212;
-color:white;
+color:#fff;
 }
 
-.dark-mode .bg-light{
+body.dark-mode .custom-navbar{
+background:#1e1e1e;
+}
+
+body.dark-mode .nav-link{
+color:#fff !important;
+}
+
+body.dark-mode .bg-light{
 background:#1e1e1e !important;
 }
 
-.dark-mode .card{
-background:#1e1e1e;
+body.dark-mode .footer{
+background:#000;
+}
+
+/* RTL */
+body.rtl{
+direction: rtl;
+}
+
+body.rtl .nav-wrapper{
+flex-direction: row-reverse;
+}
+
+body.rtl .nav-right{
+justify-content:flex-start;
+}
+
+/* HEADER */
+.custom-navbar{
+background:#fff;
+height:70px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nav-wrapper{
+display:flex;
+justify-content:space-between;
+}
+
+.nav-left{width:220px;}
+.nav-center{flex:1;display:flex;justify-content:center;}
+.nav-right{width:260px;display:flex;justify-content:flex-end;gap:10px;}
+
+.logo{width:42px;height:42px;border-radius:50%;}
+
+.navbar-nav .nav-link{
+line-height:70px;
+margin:0 8px;
+color:#333 !important;
+font-weight:500;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+margin-top:70px;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("../assets/images/bg.jpg") center/cover no-repeat;
+
+display:flex;
+align-items:flex-start;
+justify-content:flex-start;
+padding-top:140px;
 color:white;
 }
 
-.dark-mode footer{
-background:#111;
+.hero-content{
+max-width:650px;
+margin-left:20px;
 }
 
-.dark-mode .navbar-nav .nav-link{
-background:#333;
-color:white !important;
+.hero h1{
+font-size:52px;
+font-weight:700;
 }
 
-.dark-mode .navbar-nav .nav-link:hover{
-background:white;
-color:black !important;
+/* SECTION */
+.section{
+padding:90px 0;
 }
 
-/* RTL MODE */
-
-.rtl-mode{
-direction:rtl;
-text-align:right;
+.section-title{
+font-weight:600;
+margin-bottom:50px;
+text-align:center;
 }
 
-.rtl-mode .navbar-nav{
-flex-direction:row-reverse;
+/* SERVICES */
+.service-box{
+display:flex;
+gap:20px;
+align-items:flex-start;
 }
 
-.rtl-mode footer{
-text-align:right;
+.service-box i{
+font-size:35px;
+color:#0d6efd;
+}
+
+/* WHY */
+.why-box{
+text-align:center;
+padding:20px;
+}
+
+.why-box i{
+font-size:32px;
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+/* STATS */
+.stats{
+background:#0d6efd;
+color:white;
+padding:70px 0;
+}
+
+/* FOOTER */
+.footer{
+background:#0b0f19;
+color:#fff;
+padding:70px 0 20px;
+}
+
+.footer-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.footer-subtitle{
+font-size:16px;
+margin-bottom:15px;
+}
+
+.footer-text{
+color:#bbb;
+font-size:14px;
+}
+
+.footer-links{
+list-style:none;
+padding:0;
+}
+
+.footer-links li{
+margin-bottom:8px;
+}
+
+.footer-links a{
+color:#bbb;
+text-decoration:none;
+}
+
+.social-icons a{
+color:#fff;
+margin-right:10px;
+font-size:18px;
+}
+
+.footer-line{
+border-color:#333;
+margin:30px 0;
 }
 
 </style>
@@ -173,325 +201,246 @@ text-align:right;
 
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+<div class="container nav-wrapper">
 
-<nav class="navbar navbar-expand-lg">
-
-<div class="container">
-
-<a class="navbar-brand d-flex align-items-center text-white" href="#">
-<img src="../assets/images/logo.jpg" class="logo">
+<div class="nav-left d-flex align-items-center">
+<img src="../assets/images/logo.jpg" class="logo me-2">
 <span class="fw-bold">Tower&Rigging</span>
-</a>
+</div>
 
-<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="menu">
 
-<ul class="navbar-nav ms-auto">
+<div class="nav-center">
+<ul class="navbar-nav">
 
-<li class="nav-item">
-<a class="nav-link" href="index.html">Home</a>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">Home1</a></li>
+<li><a class="dropdown-item" href="home2.html">Home2</a></li>
+</ul>
 </li>
 
-<li class="nav-item">
-<a class="nav-link" href="home2.html">Home2</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="services.html">Services</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="pricing.html">Pricing</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="blog.html">Blog</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="contact.html">Contact</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="lift-planner.html">Lift Planner</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="about.html">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="login.html">Login</a>
-</li>
-
-<!-- DARK MODE BUTTON -->
-
-<li class="nav-item ms-2">
-<button onclick="toggleMode()" class="btn btn-light">
-<i id="modeIcon" class="bi bi-moon"></i>
-</button>
-</li>
-
-<!-- RTL BUTTON -->
-
-<li class="nav-item ms-2">
-<button onclick="toggleRTL()" class="btn btn-warning">
-RTL
-</button>
-</li>
+<li><a class="nav-link" href="services.html">Services</a></li>
+<li><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li><a class="nav-link" href="blog.html">Blog</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+<li><a class="nav-link" href="lift-planner.html">Lift Planner</a></li>
+<li><a class="nav-link" href="about.html">About</a></li>
 
 </ul>
+</div>
+
+<div class="nav-right">
+
+<button class="btn btn-outline-secondary btn-sm" onclick="toggleRTL()">RTL</button>
+
+<button class="btn btn-outline-dark btn-sm" onclick="toggleDarkMode()">🌙</button>
+
+<a href="admin-login.html" class="btn btn-primary btn-sm">Sign Up</a>
+<a href="user-login.html" class="btn btn-outline-primary btn-sm">Log In</a>
 
 </div>
 
 </div>
-
+</div>
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="container">
+<div class="hero-content">
 
-<h6 class="text-uppercase mb-3">
-Professional Heavy Lifting Solutions
-</h6>
+<h6 class="text-uppercase mb-3">Professional Heavy Lifting Solutions</h6>
 
-<h1 class="display-3 fw-bold">
-Tower Crane & Rigging Experts
-</h1>
+<h1>Tower Crane & Rigging Experts</h1>
 
 <p class="lead mt-3">
 Providing safe, efficient, and reliable lifting solutions for construction,
-infrastructure, and industrial projects across the country.
+infrastructure, and industrial projects.
 </p>
 
 <div class="mt-4">
-
-<a href="services.html" class="btn btn-primary btn-lg me-3">
-Explore Services
-</a>
-
-<a href="contact.html" class="btn btn-outline-light btn-lg">
-Get Quote
-</a>
-
-</div>
-
-<div class="hero-features mt-4">
-
-<span><i class="bi bi-shield-check"></i> Safety Certified</span>
-<span><i class="bi bi-award"></i> Experienced Operators</span>
-<span><i class="bi bi-clock"></i> 24/7 Support</span>
-
+<a href="#" class="btn btn-primary btn-lg me-3">Explore Services</a>
+<a href="#" class="btn btn-outline-light btn-lg">Get Quote</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
 <!-- SERVICES -->
-
-<section class="py-5 bg-light">
-
+<section class="section bg-light">
 <div class="container">
+<h2 class="section-title">Our Services</h2>
 
-<h2 class="text-center mb-5">Our Core Services</h2>
+<div class="row g-5">
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="bi bi-building"></i>
+<div>
+<h5>Tower Crane Rental</h5>
+<p>Reliable crane solutions for construction projects.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="bi bi-gear"></i>
+<div>
+<h5>Rigging Services</h5>
+<p>Safe and efficient heavy lifting operations.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="bi bi-tools"></i>
+<div>
+<h5>Maintenance</h5>
+<p>Inspection and maintenance services.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Why Choose Us</h2>
 
 <div class="row">
 
 <div class="col-md-4">
-
-<div class="card service-card p-4 text-center">
-
-<i class="bi bi-building fs-1 text-primary"></i>
-
-<h4 class="mt-3">Crane Rental</h4>
-
-<p>
-Modern tower cranes and mobile cranes available for construction projects.
-</p>
-
+<div class="why-box">
+<i class="bi bi-patch-check"></i>
+<h5>Certified Experts</h5>
 </div>
-
 </div>
 
 <div class="col-md-4">
-
-<div class="card service-card p-4 text-center">
-
-<i class="bi bi-tools fs-1 text-primary"></i>
-
-<h4 class="mt-3">Rigging Operations</h4>
-
-<p>
-Professional rigging services for lifting heavy industrial equipment.
-</p>
-
+<div class="why-box">
+<i class="bi bi-cpu"></i>
+<h5>Modern Equipment</h5>
 </div>
-
 </div>
 
 <div class="col-md-4">
-
-<div class="card service-card p-4 text-center">
-
-<i class="bi bi-graph-up fs-1 text-primary"></i>
-
-<h4 class="mt-3">Lift Planning</h4>
-
-<p>
-Engineering simulations and load calculations for safe lifting operations.
-</p>
-
+<div class="why-box">
+<i class="bi bi-headset"></i>
+<h5>24/7 Support</h5>
+</div>
 </div>
 
 </div>
-
 </div>
-
-</div>
-
 </section>
 
 <!-- STATS -->
-
 <section class="stats text-center">
-
 <div class="container">
-
 <div class="row">
 
-<div class="col-md-3">
-<h2>120+</h2>
-<p>Projects Completed</p>
+<div class="col-md-4">
+<h2>500+</h2>
+<p>Projects</p>
 </div>
 
-<div class="col-md-3">
-<h2>40+</h2>
-<p>Operators</p>
+<div class="col-md-4">
+<h2>200+</h2>
+<p>Clients</p>
 </div>
 
-<div class="col-md-3">
-<h2>25</h2>
-<p>Heavy Cranes</p>
-</div>
-
-<div class="col-md-3">
+<div class="col-md-4">
 <h2>15+</h2>
 <p>Years Experience</p>
 </div>
 
 </div>
-
 </div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>Need Crane Services for Your Project?</h2>
-
-<p class="mt-3">
-Contact our experienced team for lift planning and crane rental solutions.
-</p>
-
-<a href="contact.html" class="btn btn-primary btn-lg mt-3">
-Request Consultation
-</a>
-
-</div>
-
 </section>
 
 <!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="row gy-4">
 
-<footer>
-
-<div class="container text-center">
-
-<h5 class="mb-3">Tower & Rigging Services</h5>
-
-<p>
-Industrial Lifting • Rigging • Crane Rental
+<div class="col-md-4">
+<h4 class="footer-title">Tower & Rigging</h4>
+<p class="footer-text">
+We provide safe, efficient, and reliable crane & rigging services 
+for construction, infrastructure, and industrial projects.
 </p>
+</div>
 
-<div class="mt-3">
+<div class="col-md-3">
+<h5 class="footer-subtitle">Quick Links</h5>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="home2.html">Home 2</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="lift-planner.html">Lift Planner</a></li>
+<li><a href="coming-soon.html">Coming Soon</a></li>
+<li><a href="404.html">404 Page</a></li>
 
-<a href="index.html" class="text-white me-3 text-decoration-none">Home</a>
-<a href="about.html" class="text-white me-3 text-decoration-none">About</a>
-<a href="services.html" class="text-white me-3 text-decoration-none">Services</a>
-<a href="pricing.html" class="text-white me-3 text-decoration-none">Pricing</a>
-<a href="blog.html" class="text-white me-3 text-decoration-none">Blog</a>
-<a href="contact.html" class="text-white me-3 text-decoration-none">Contact</a>
-<a href="404.html" class="text-white me-3 text-decoration-none">404 Page</a>
-<a href="coming-soon.html" class="text-white text-decoration-none">Coming Soon</a>
+</ul>
+</div>
+
+<div class="col-md-3">
+<h5 class="footer-subtitle">Our Services</h5>
+<ul class="footer-links">
+<li><a href="#">Tower Crane Rental</a></li>
+<li><a href="#">Rigging Services</a></li>
+<li><a href="#">Lift Planning</a></li>
+<li><a href="#">Inspection</a></li>
+<li><a href="#">Maintenance</a></li>
+</ul>
+</div>
+
+<div class="col-md-2">
+<h5 class="footer-subtitle">Subscribe</h5>
+<input type="email" class="form-control mb-2" placeholder="Enter email">
+<button class="btn btn-primary w-100">Subscribe</button>
+</div>
 
 </div>
 
-<hr class="bg-light">
+<hr class="footer-line">
 
-<p class="mt-2">
-© 2026 Tower & Rigging Services. All Rights Reserved.
-</p>
-
+<div class="text-center">
+<p class="small">© 2026 Tower & Rigging. All Rights Reserved.</p>
 </div>
 
+</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-
-function toggleMode(){
-
-document.body.classList.toggle("dark-mode")
-
-let icon=document.getElementById("modeIcon")
-
-if(document.body.classList.contains("dark-mode")){
-icon.classList="bi bi-sun"
-localStorage.setItem("mode","dark")
-}else{
-icon.classList="bi bi-moon"
-localStorage.setItem("mode","light")
-}
-
+function toggleDarkMode(){
+document.body.classList.toggle("dark-mode");
 }
 
 function toggleRTL(){
-
-document.body.classList.toggle("rtl-mode")
-
-if(document.body.classList.contains("rtl-mode")){
-localStorage.setItem("rtl","on")
-}else{
-localStorage.setItem("rtl","off")
+document.body.classList.toggle("rtl");
 }
-
-}
-
-window.onload=function(){
-
-if(localStorage.getItem("mode")==="dark"){
-document.body.classList.add("dark-mode")
-document.getElementById("modeIcon").classList="bi bi-sun"
-}
-
-if(localStorage.getItem("rtl")==="on"){
-document.body.classList.add("rtl-mode")
-}
-
-}
-
 </script>
 
 </body>
-</html>
+</html>  
