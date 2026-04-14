@@ -11,7 +11,6 @@
 <style>
 
 /* BACKGROUND */
-
 body{
 height:100vh;
 display:flex;
@@ -24,7 +23,6 @@ url("../assets/images/bg.jpg") center/cover no-repeat;
 }
 
 /* GLASS CARD */
-
 .login-card{
 width:360px;
 padding:35px;
@@ -37,14 +35,12 @@ text-align:center;
 }
 
 /* TITLE */
-
 .login-card h2{
 margin-bottom:25px;
 font-weight:600;
 }
 
 /* INPUT GROUP */
-
 .input-group{
 margin-bottom:15px;
 }
@@ -60,7 +56,6 @@ border-radius:0 6px 6px 0;
 }
 
 /* BUTTON */
-
 .login-btn{
 width:100%;
 padding:10px;
@@ -78,7 +73,6 @@ transform:scale(1.03);
 }
 
 /* LINKS */
-
 .links{
 margin-top:15px;
 font-size:14px;
@@ -103,24 +97,32 @@ color:#0d6efd;
 
 <h2>User Login</h2>
 
-<form onsubmit="userLogin(event)">
+<!-- ✅ FORM START -->
+<form onsubmit="userLogin(event)" autocomplete="off">
+
+<!-- 🔒 Hidden inputs to block autofill -->
+<input type="text" style="display:none">
+<input type="password" style="display:none">
 
 <div class="input-group">
 <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-<input type="email" id="email" class="form-control" placeholder="Email" required>
+<input type="email" id="email" class="form-control"
+placeholder="Email" required autocomplete="off">
 </div>
 
 <div class="input-group">
 <span class="input-group-text"><i class="bi bi-lock"></i></span>
-<input type="password" id="password" class="form-control" placeholder="Password" required>
+<input type="password" id="password" class="form-control"
+placeholder="Password" required autocomplete="new-password">
 </div>
 
 <button type="submit" class="login-btn">Login</button>
 
 </form>
+<!-- ✅ FORM END -->
 
 <div class="links">
-<p>Admin? <a href="admin-login.html">Login here</a></p>
+<p>Admin? <a href="admin-login.html">Admin Login</a></p>
 <a href="/pages/index.html">← Back to Website</a>
 </div>
 

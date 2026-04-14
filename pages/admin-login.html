@@ -9,6 +9,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
+
+/* BACKGROUND */
 body{
 height:100vh;
 display:flex;
@@ -20,36 +22,71 @@ linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("../assets/images/bg.jpg") center/cover no-repeat;
 }
 
+/* GLASS CARD */
 .login-card{
 width:360px;
 padding:35px;
-border-radius:12px;
-background:white;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+border-radius:15px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+color:white;
 text-align:center;
 }
 
+/* TITLE */
 .login-card h2{
-margin-bottom:20px;
+margin-bottom:25px;
+font-weight:600;
 }
 
-button{
-width:100%;
-padding:10px;
-background:#dc3545;
+/* INPUT GROUP */
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group-text{
+background:#08802e;
 color:white;
 border:none;
-border-radius:6px;
 }
 
-button:hover{
-background:#bb2d3b;
+.form-control{
+border-radius:0 6px 6px 0;
 }
 
-/* Back button style */
-.back-btn{
-margin-top:10px;
+/* BUTTON */
+.login-btn{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#08802e;
+color:white;
+font-weight:500;
+transition:0.3s;
 }
+
+.login-btn:hover{
+background:#08802e;
+transform:scale(1.03);
+}
+
+/* LINKS */
+.links{
+margin-top:15px;
+font-size:14px;
+}
+
+.links a{
+color:#fff;
+text-decoration:underline;
+}
+
+.links a:hover{
+color:#0d6efd;
+}
+
 </style>
 
 </head>
@@ -60,49 +97,53 @@ margin-top:10px;
 
 <h2>Admin Login</h2>
 
-<form onsubmit="adminLogin(event)">
+<!-- ✅ FORM START -->
+<form onsubmit="adminLogin(event)" autocomplete="off">
 
-<input type="email" id="email" class="form-control mb-3" placeholder="Admin Email" required>
+<!-- 🔒 Hidden fields to block browser autofill -->
+<input type="text" name="fakeuser" style="display:none">
+<input type="password" name="fakepass" style="display:none">
 
-<input type="password" id="password" class="form-control mb-3" placeholder="Password" required>
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-envelope"></i></span>
+<input type="email" id="email" class="form-control"
+placeholder="Email" required autocomplete="off">
+</div>
 
-<button type="submit">Login</button>
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-lock"></i></span>
+<input type="password" id="password" class="form-control"
+placeholder="Password" required autocomplete="new-password">
+</div>
+
+<button type="submit" class="login-btn">Login</button>
 
 </form>
+<!-- ✅ FORM END -->
 
-<p class="mt-3">
-User? <a href="user-login.html">Login here</a>
-</p>
-
-<!-- ✅ BACK TO WEBSITE BUTTON -->
-<div class="back-btn">
-<a href="/pages/index.html" class="btn btn-outline-dark w-100">
-<i class="bi bi-arrow-left"></i> Back to Website
-</a>
+<div class="links">
+<p>User Login? <a href="user-login.html">Login here</a></p>
+<a href="/pages/index.html">← Back to Website</a>
 </div>
 
 </div>
 
 <script>
+
 function adminLogin(e){
 e.preventDefault();
 
-let email = document.getElementById("email").value.trim();
-let password = document.getElementById("password").value.trim();
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
 
-// CLEAR OLD SESSION
-sessionStorage.clear();
-
-// CHECK ADMIN
-if(email === "admin@gmail.com" && password === "admin123"){
-
+if(email==="admin@gmail.com" && password==="admin123"){
 sessionStorage.setItem("role","admin");
-window.location.href = "../admin/dashboard.html";
-
+window.location.href="../admin/dashboard.html";
 }else{
-alert("Invalid Admin Credentials");
+alert("Invalid Admin Login");
 }
 }
+
 </script>
 
 </body>
